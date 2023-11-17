@@ -1,4 +1,4 @@
 export default {
-  API_URL: "https://api.apilayer.com/fixer",
+  API_URL: "https://api.apilayer.com/currency_data/",
   API_KEY: ""
 }

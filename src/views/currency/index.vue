@@ -1,10 +1,10 @@
 <template>
   <div>
     <v-card
-      class="align-center mx-12 my-12"
+      class="align-center mx-6 my-6"
       outlined
       height="100vh"
-      color="grey lighten-4"
+      color="grey lighten-5"
     >
       <v-card-title class="justify-center">Conversor de Moeda</v-card-title>
 
@@ -50,7 +50,7 @@
             <v-text-field
               v-model="payload.amount"
               label="Valor"
-              placeholder="5.75"
+              placeholder="0.00"
               outlined
             />
 
@@ -97,8 +97,8 @@ export default {
   methods: {
     async getCurrenciesSymbols() {
       try {
-        const response = await CurrencyAPI.get("/symbols");
-        const symbols = response.data.symbols;
+        const response = await CurrencyAPI.get("/list");
+        const symbols = response.data.currencies;
 
         this.currencies = Object.keys(symbols).map((key) => ({
           label: `${key} - ${symbols[key]}`,
