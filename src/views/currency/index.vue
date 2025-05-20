@@ -1,11 +1,6 @@
 <template>
-  <div>
-    <v-card
-      class="align-center mx-6 my-6"
-      outlined
-      height="100vh"
-      color="grey lighten-5"
-    >
+  <v-container fluid max-width="1000" class="d-flex align-center justify-center">
+    <v-card class="align-center mx-6 my-6" flat height="100vh">
       <v-card-title class="justify-center">Conversor de Moeda</v-card-title>
 
       <v-card-text>
@@ -17,15 +12,8 @@
           </v-col>
 
           <v-col cols="5">
-            <v-autocomplete
-              v-model="payload.from"
-              :items="currencies"
-              item-text="label"
-              item-value="value"
-              solo
-              label="Selecione a moeda"
-              solo-inverted
-            />
+            <v-autocomplete v-model="payload.from" :items="currencies" item-text="label" item-value="value" outlined
+              label="Selecione a moeda" flat />
           </v-col>
 
           <v-col cols="2" class="d-flex justify-center align-center">
@@ -35,26 +23,14 @@
           </v-col>
 
           <v-col cols="5">
-            <v-autocomplete
-              v-model="payload.to"
-              :items="currencies"
-              item-text="label"
-              item-value="value"
-              solo
-              label="Selecione a moeda"
-              solo-inverted
-            />
+            <v-autocomplete v-model="payload.to" :items="currencies" item-text="label" item-value="value" solo
+              label="Selecione a moeda" flat outlined />
           </v-col>
 
           <v-col cols="12">
-            <v-text-field
-              v-model="payload.amount"
-              label="Valor"
-              placeholder="0.00"
-              outlined
-            />
+            <v-text-field v-model="payload.amount" label="Valor" placeholder="0.00" outlined />
 
-            <v-btn @click="getCurrenciesConvert" color="success" class="w100">
+            <v-btn @click="getCurrenciesConvert" color="success" class="w100" flat>
               Converter
             </v-btn>
           </v-col>
@@ -70,7 +46,7 @@
         </v-row>
       </v-card-text>
     </v-card>
-  </div>
+  </v-container>
 </template>
 
 <script>
